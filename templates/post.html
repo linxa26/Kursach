@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SKYPROGRAM post</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.min.css') }}">
+</head>
+<body>
+    <header class="container header">
+        <div class="header__wrapper">
+            <a href="/" class="header__btn-back">
+                <svg class="header__btn-icon" width="19" height="16">
+                    <use xlink:href="#back"></use>
+                </svg>
+            </a>
+            <a href="/" class="header__logo-link">
+                <svg class="header__logo" width="64" height="26">
+                    <use xlink:href="#post"></use>
+                </svg>
+            </a>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="items">
+            <div class="items__item item item--post">
+                <div class="item__top">
+                    <a href="{{ url_for('user_posts', user_name=post['poster_name']) }}" class="item__head">
+                        <div class="item__ava-wrap">
+                            <img src="{{ post['poster_avatar'] }}" alt="" class="item__ava" width="47">
+                        </div>
+                        <span class="item__username">{{ post['poster_name'] }}</span>
+                    </a>
+                    <button type="button" class="item__bookmark-btn">
+                        <img src="{{ url_for('static', filename='img/bookmark.png') }}" alt="" class="item__bookmark-icon" width="24">
+                    </button>
+                </div>
+
+                <a href="#" class="item__post-link">
+                    <img src="{{ post['pic'] }}" alt="" width="348" class="item__post-img">
+                </a>
+
+                <div class="item__descr">
+                    <p class="item__text">{{ post['content'] }}</p>
+                </div>
+
+                <div class="item__bottom">
+                    <div class="item__post-info">
+                        <p class="item__comments-counter">{{ comments|length }} комментария</p>
+                        <div class="item__counter">
+                            <img src="{{ url_for('static', filename='img/eye.png') }}" alt="" class="item__counter-icon" width="26">
+                            <span class="item__counter-text">{{ post['views_count'] }}</span>
+                        </div>
+                    </div>
+
+                    <div class="item__comments">
+                        {% for comment in comments %}
+                            <p class="item__comment">
+                                <b>{{ comment["commenter_name"] }}:</b> {{ comment["comment"] }}
+                            </p>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SKYPROGRAM</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.min.css') }}">
+</head>
+<body>
+    <header class="container header">
+        <div class="header__wrapper">
+            <a href="/" class="header__logo-link">SKYPROGRAM</a>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="search">
+            <form action="/search" class="search__form">
+                <input type="search" class="search__input" name="s" placeholder="Поиск...">
+                <button type="submit">Найти</button>
+            </form>
+        </div>
+
+        <section class="items">
+            {% for post in posts %}
+            <div class="items__item item">
+                <div class="item__top">
+                    <a href="/users/{{ post.poster_name }}" class="item__head">
+                        <div class="item__ava-wrap">
+                            <img src="{{ post.poster_avatar }}" alt="" class="item__ava" width="47">
+                        </div>
+                        <span class="item__username">{{ post.poster_name }}</span>
+                    </a>
+                </div>
+                <a href="/posts/{{ post.pk }}" class="item__post-link">
+                    <img src="{{ post.pic }}" alt="" width="348" class="item__post-img">
+                </a>
+                <p class="item__descr">{{ post.content[:100] }}...</p>
+                <div class="item__post-info">
+                    <span class="item__counter-text">{{ post.views_count }} просмотров</span>
+                </div>
+                <div class="item__post-bottom">
+                    <a href="/posts/{{ post.pk }}" class="item__btn-more">Подробнее</a>
+                </div>
+            </div>
+            {% endfor %}
+        </section>
+    </main>
+</body>
+</html>

@@ -1,0 +1,255 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap");
+
+/*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
+html {
+    line-height: 1.15;
+    -webkit-text-size-adjust: 100%;
+}
+
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 29px;
+    color: #000;
+    background-color: lightblue !important;
+}
+
+main {
+    display: block;
+}
+
+h1 {
+    font-size: 2em;
+    margin: 0.67em 0;
+}
+
+a {
+    background-color: transparent;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+img {
+    border-style: none;
+    height: auto;
+}
+
+p {
+    margin: 0;
+    padding: 0;
+}
+
+button,
+input,
+optgroup,
+select,
+textarea {
+    font-family: inherit;
+    font-size: 100%;
+    line-height: 1.15;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    padding-left: 30px;
+    padding-right: 30px;
+    width: 100%;
+    max-width: 348px;
+    margin: 0 auto;
+}
+
+/* Header */
+.header__wrapper {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    padding: 35px 0 27px;
+}
+
+.header__btn-back {
+    position: absolute;
+    left: 5px;
+    top: 38px;
+}
+
+.header__nosvg {
+    color: #000;
+    font-size: 32px;
+    font-weight: bold;
+}
+
+/* Bookmark */
+.header__bookmark-btn {
+    position: absolute;
+    right: 0;
+    top: 34px;
+    text-decoration: none;
+    display: block;
+}
+
+.header__bookmark-icon {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.header__bookmark-counter {
+    font-size: 18px;
+    font-weight: bold;
+    color: #000;
+    vertical-align: middle;
+}
+
+/* Post Items */
+.item {
+    margin-bottom: 22px;
+    padding-bottom: 23px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.25);
+}
+
+.item--post {
+    border-bottom: none;
+}
+
+.item__top {
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+}
+
+.item__delete {
+    display: inline-block;
+    padding-top: 10px;
+    font-weight: bold;
+    text-decoration: none;
+    color: #FF2768;
+}
+
+.item__head {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    margin-bottom: 16px;
+}
+
+.item__ava-wrap {
+    padding-right: 14px;
+}
+
+.item__username {
+    font-weight: bold;
+    color: #000;
+    padding-bottom: 10px;
+}
+
+.item__post-link {
+    display: block;
+    line-height: 0;
+    margin-bottom: 27px;
+}
+
+.item__descr {
+    margin-bottom: 2px;
+}
+
+.item__text {
+    margin-top: 23px;
+    margin-bottom: 29px;
+}
+
+.item__tag {
+    display: inline-block;
+    padding-right: 2px;
+    font-weight: bold;
+    color: #0085FF;
+    text-decoration: none;
+}
+
+/* Post Info */
+.item__post-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.item__counter {
+    display: flex;
+    align-items: center;
+}
+
+.item__counter-icon {
+    width: 26px;
+    padding-bottom: 3px;
+}
+
+.item__counter-text {
+    padding-left: 11px;
+    color: rgba(0, 0, 0, 0.45);
+}
+
+.item__comments-counter {
+    color: rgba(0, 0, 0, 0.45);
+}
+
+/* Comments */
+.item__bottom {
+    padding-top: 24px;
+    padding-bottom: 30px;
+    border-top: 1px solid #000;
+    line-height: 20px;
+}
+
+.item__comments {
+    padding-top: 20px;
+    margin-bottom: 32px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.25);
+}
+
+.item__comment {
+    margin-bottom: 23px;
+}
+
+/* Search */
+.search {
+    padding-bottom: 28px;
+    margin-bottom: 28px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.25);
+}
+
+.search__input {
+    display: block;
+    width: 100%;
+    padding: 18px 18px 16px;
+    background: rgba(196, 196, 196, 0.25);
+    border-radius: 6px;
+    border: none;
+    outline: none;
+}
+
+/* Forms */
+.comment-form__input,
+.comment-form__textarea {
+    display: block;
+    width: 100%;
+    padding: 12px 10px;
+    border-radius: 6px;
+    border: 1px solid rgba(0, 0, 0, 0.45);
+    outline: none;
+}
+
+.comment-form__btn {
+    color: #fff;
+    padding: 16px 24px;
+    border-radius: 6px;
+    background: #000;
+    border: none;
+    outline: none;
+    transition: all 0.5s linear;
+}
+
+.comment-form__btn:hover {
+    opacity: 0.75;
+}
